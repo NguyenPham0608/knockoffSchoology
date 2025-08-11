@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Home - My Flask App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-primary padding-md">
+        <div class="container flex-between">
+            <div>
+                <h1 class="text-white margin-0">My Flask App</h1>
+            </div>
+            <div class="flex">
+                <a href="{{ url_for('index') }}" class="text-white margin-x-sm text-decoration-none">Home</a>
+                <a href="{{ url_for('about') }}" class="text-white margin-x-sm text-decoration-none">About</a>
+                <a href="{{ url_for('blog') }}" class="text-white margin-x-sm text-decoration-none">Blog</a>
+                <a href="{{ url_for('contact') }}" class="text-white margin-x-sm text-decoration-none">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container margin-top-md">
+                {% for category, message in messages %}
+                    <div class="padding-md margin-bottom-sm rounded 
+                        {% if category == 'success' %}bg-success text-white
+                        {% elif category == 'danger' %}bg-danger text-white
+                        {% else %}bg-info text-white{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Hero Section -->
+    <section class="bg-light padding-lg">
+        <div class="container text-center">
+            <h1 class="text-3xl font-bold margin-bottom-md">Welcome to My Flask Application</h1>
+            <p class="text-large text-secondary margin-bottom-lg">
+                A modern web application built with Flask and custom CSS utilities
+            </p>
+            <div class="flex-center">
+                <a href="{{ url_for('blog') }}" class="btn btn-lg margin-sm">View Blog</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-lg btn-secondary margin-sm">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recent Posts Section -->
+    <section class="container padding-lg">
+        <h2 class="text-2xl font-bold margin-bottom-lg text-center">Recent Posts</h2>
+        {% if posts %}
+            <div class="grid-3">
+                {% for post in posts %}
+                    <div class="card">
+                        <h3 class="text-xl font-bold margin-bottom-sm">{{ post.title }}</h3>
+                        <p class="text-small text-secondary margin-bottom-sm">
+                            By {{ post.author }} on {{ post.timestamp[:10] }}
+                        </p>
+                        <p class="margin-bottom-md">
+                            {{ post.content[:100] }}{% if post.content|length > 100 %}...{% endif %}
+                        </p>
+                        <a href="{{ url_for('view_post', post_id=post.id) }}" class="btn btn-sm">Read More</a>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <div class="text-center">
+                <p class="text-secondary">No posts yet. <a href="{{ url_for('new_post') }}">Create the first one!</a></p>
+            </div>
+        {% endif %}
+    </section>
+
+    <!-- Features Section -->
+    <section class="bg-light padding-lg">
+        <div class="container">
+            <h2 class="text-2xl font-bold margin-bottom-lg text-center">Features</h2>
+            <div class="grid-3">
+                <div class="text-center padding-md">
+                    <div class="bg-primary text-white width-16 height-16 rounded-full flex-center margin-auto margin-bottom-md">
+                        <span class="text-xl">📝</span>
+                    </div>
+                    <h3 class="text-xl font-bold margin-bottom-sm">Blog System</h3>
+                    <p class="text-secondary">Create and manage blog posts with ease</p>
+                </div>
+                <div class="text-center padding-md">
+                    <div class="bg-success text-white width-16 height-16 rounded-full flex-center margin-auto margin-bottom-md">
+                        <span class="text-xl">📞</span>
+                    </div>
+                    <h3 class="text-xl font-bold margin-bottom-sm">Contact Form</h3>
+                    <p class="text-secondary">Get in touch through our contact form</p>
+                </div>
+                <div class="text-center padding-md">
+                    <div class="bg-info text-white width-16 height-16 rounded-full flex-center margin-auto margin-bottom-md">
+                        <span class="text-xl">🎨</span>
+                    </div>
+                    <h3 class="text-xl font-bold margin-bottom-sm">Modern Design</h3>
+                    <p class="text-secondary">Clean and responsive user interface</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white padding-lg">
+        <div class="container text-center">
+            <p>&copy; 2024 My Flask App. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

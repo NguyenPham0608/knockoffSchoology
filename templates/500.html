@@ -1,0 +1,22 @@
+<!-- templates/500.html -->
+{% extends "base.html" %}
+
+{% block title %}Server Error - My Flask App{% endblock %}
+
+{% block content %}
+<section class="container padding-lg">
+    <div class="container-sm text-center">
+        <div class="card padding-lg">
+            <h1 class="text-3xl font-bold margin-bottom-md">500 - Server Error</h1>
+            <div class="text-6xl margin-bottom-lg">⚠️</div>
+            <p class="text-large margin-bottom-lg">
+                Something went wrong on our end. We're working to fix it!
+            </p>
+            <div class="flex-center">
+                <a href="{{ url_for('index') }}" class="btn btn-lg margin-sm">Go Home</a>
+                <a href="{{ url_for('contact') }}" class="btn btn-lg btn-secondary margin-sm">Report Issue</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

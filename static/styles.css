@@ -13,6 +13,7 @@ body {
     background-color: #fff;
 }
 
+/* Layout Classes */
 .container {
     max-width: 1200px;
     margin: 0 auto;
@@ -76,6 +77,20 @@ body {
     gap: 20px;
 }
 
+/* Display Classes */
+.display-block {
+    display: block;
+}
+
+.display-inline {
+    display: inline;
+}
+
+.display-inline-block {
+    display: inline-block;
+}
+
+/* Typography */
 .text-center {
     text-align: center;
 }
@@ -108,6 +123,18 @@ body {
     font-size: 1.875rem;
 }
 
+.text-4xl {
+    font-size: 2.25rem;
+}
+
+.text-5xl {
+    font-size: 3rem;
+}
+
+.text-6xl {
+    font-size: 4rem;
+}
+
 .font-bold {
     font-weight: bold;
 }
@@ -116,8 +143,13 @@ body {
     font-weight: 300;
 }
 
+/* Margin Classes */
 .margin-0 {
     margin: 0;
+}
+
+.margin-auto {
+    margin: auto;
 }
 
 .margin-sm {
@@ -130,6 +162,26 @@ body {
 
 .margin-lg {
     margin: 30px;
+}
+
+.margin-x-sm {
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.margin-x-md {
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.margin-y-sm {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.margin-y-md {
+    margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .margin-top-sm {
@@ -156,6 +208,19 @@ body {
     margin-bottom: 30px;
 }
 
+.margin-left-sm {
+    margin-left: 10px;
+}
+
+.margin-right-sm {
+    margin-right: 10px;
+}
+
+.margin-right-md {
+    margin-right: 20px;
+}
+
+/* Padding Classes */
 .padding-0 {
     padding: 0;
 }
@@ -192,12 +257,21 @@ body {
     padding-bottom: 20px;
 }
 
+.padding-bottom-md {
+    padding-bottom: 20px;
+}
+
+/* Width and Height */
 .width-full {
     width: 100%;
 }
 
 .width-half {
     width: 50%;
+}
+
+.width-16 {
+    width: 4rem;
 }
 
 .height-full {
@@ -208,6 +282,11 @@ body {
     height: 100vh;
 }
 
+.height-16 {
+    height: 4rem;
+}
+
+/* Background Colors */
 .bg-primary {
     background-color: #007bff;
 }
@@ -244,6 +323,7 @@ body {
     background-color: #fff;
 }
 
+/* Text Colors */
 .text-primary {
     color: #007bff;
 }
@@ -280,6 +360,7 @@ body {
     color: #fff;
 }
 
+/* Borders */
 .border {
     border: 1px solid #dee2e6;
 }
@@ -304,6 +385,7 @@ body {
     border: none;
 }
 
+/* Border Radius */
 .rounded {
     border-radius: 4px;
 }
@@ -324,6 +406,7 @@ body {
     border-radius: 50%;
 }
 
+/* Shadows */
 .shadow-sm {
     box-shadow:
         0 1px 3px rgba(0, 0, 0, 0.12),
@@ -342,6 +425,7 @@ body {
         0 4px 6px rgba(0, 0, 0, 0.05);
 }
 
+/* Visibility */
 .hidden {
     display: none;
 }
@@ -354,6 +438,16 @@ body {
     visibility: hidden;
 }
 
+/* Text Decoration */
+.text-decoration-none {
+    text-decoration: none;
+}
+
+.text-decoration-underline {
+    text-decoration: underline;
+}
+
+/* Buttons */
 .btn {
     display: inline-block;
     padding: 8px 16px;
@@ -365,6 +459,7 @@ body {
     cursor: pointer;
     font-size: 14px;
     transition: background-color 0.2s;
+    text-align: center;
 }
 
 .btn:hover {
@@ -405,12 +500,14 @@ body {
     background-color: #c82333;
 }
 
+/* Form Elements */
 .input {
     width: 100%;
     padding: 8px 12px;
     border: 1px solid #ced4da;
     border-radius: 4px;
     font-size: 14px;
+    font-family: inherit;
 }
 
 .input:focus {
@@ -419,6 +516,12 @@ body {
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
+textarea.input {
+    resize: vertical;
+    min-height: 80px;
+}
+
+/* Cards */
 .card {
     background-color: #fff;
     border: 1px solid #dee2e6;
@@ -435,10 +538,12 @@ body {
     border-radius: 4px 4px 0 0;
 }
 
+/* Lists */
 .list-none {
     list-style: none;
 }
 
+/* Overflow */
 .overflow-hidden {
     overflow: hidden;
 }
@@ -447,6 +552,7 @@ body {
     overflow: auto;
 }
 
+/* Position */
 .position-relative {
     position: relative;
 }
@@ -475,6 +581,7 @@ body {
     left: 0;
 }
 
+/* Z-Index */
 .z-10 {
     z-index: 10;
 }
@@ -487,7 +594,24 @@ body {
     z-index: 30;
 }
 
+/* Navigation Styles */
+nav a {
+    text-decoration: none;
+    transition: opacity 0.2s;
+}
+
+nav a:hover {
+    opacity: 0.8;
+}
+
+/* Content Styles */
+.post-content p {
+    line-height: 1.8;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
+
     .grid-2,
     .grid-3,
     .grid-4 {
@@ -504,5 +628,26 @@ body {
 
     .hidden-mobile {
         display: none;
+    }
+
+    .container {
+        padding: 0 15px;
+    }
+
+    .container-sm {
+        padding: 0 15px;
+    }
+
+    .flex-between {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .text-3xl {
+        font-size: 1.5rem;
+    }
+
+    .text-2xl {
+        font-size: 1.25rem;
     }
 }

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - My Flask App{% endblock %}
+
+{% block content %}
+<section class="container padding-lg">
+    <div class="container-sm">
+        <div class="flex-between margin-bottom-lg">
+            <a href="{{ url_for('blog') }}" class="btn btn-secondary">← Back to Blog</a>
+            <span class="text-small text-secondary">Post #{{ post.id }}</span>
+        </div>
+        
+        <article class="card">
+            <header class="margin-bottom-lg">
+                <h1 class="text-3xl font-bold margin-bottom-md">{{ post.title }}</h1>
+                <div class="text-secondary border-bottom padding-bottom-md margin-bottom-md">
+                    <span class="margin-right-md">
+                        <strong>Author:</strong> {{ post.author }}
+                    </span>
+                    <span>
+                        <strong>Published:</strong> {{ post.timestamp[:10] }}
+                    </span>
+                </div>
+            </header>
+            
+            <div class="post-content">
+                {% for paragraph in post.content.split('\n') %}
+                    {% if paragraph.strip() %}
+                        <p class="margin-bottom-md">{{ paragraph }}</p>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </article>
+        
+        <div class="card margin-top-lg text-center">
+            <h3 class="text-xl font-bold margin-bottom-md">Enjoyed this post?</h3>
+            <p class="margin-bottom-md">Check out our other blog posts or create your own!</p>
+            <div class="flex-center">
+                <a href="{{ url_for('blog') }}" class="btn margin-sm">View All Posts</a>
+                <a href="{{ url_for('new_post') }}" class="btn btn-success margin-sm">Write a Post</a>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

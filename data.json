@@ -1,0 +1,19 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "Welcome to Our Blog",
+      "content": "This is our first blog post. Welcome to our website!",
+      "author": "Admin",
+      "timestamp": "2025-08-11T09:36:05.439475"
+    },
+    {
+      "id": 2,
+      "title": "hhh",
+      "content": "etgg",
+      "author": "ssss",
+      "timestamp": "2025-08-11T09:36:32.912261"
+    }
+  ],
+  "contacts": []
+}

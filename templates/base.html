@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Flask App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="bg-primary padding-md">
+        <div class="container flex-between">
+            <div>
+                <h1 class="text-white margin-0">My Flask App</h1>
+            </div>
+            <div class="flex">
+                <a href="{{ url_for('index') }}" class="text-white margin-x-sm">Home</a>
+                <a href="{{ url_for('about') }}" class="text-white margin-x-sm">About</a>
+                <a href="{{ url_for('blog') }}" class="text-white margin-x-sm">Blog</a>
+                <a href="{{ url_for('contact') }}" class="text-white margin-x-sm">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="container margin-top-md">
+                {% for category, message in messages %}
+                    <div class="padding-md margin-bottom-sm rounded 
+                        {% if category == 'success' %}bg-success text-white
+                        {% elif category == 'danger' %}bg-danger text-white
+                        {% else %}bg-info text-white{% endif %}">
+                        {{ message }}
+                    </div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white padding-lg">
+        <div class="container text-center">
+            <p>&copy; 2024 My Flask App. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

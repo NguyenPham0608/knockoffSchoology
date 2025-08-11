@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}Blog - My Flask App{% endblock %}
+
+{% block content %}
+<section class="container padding-lg">
+    <div class="flex-between margin-bottom-lg">
+        <h1 class="text-3xl font-bold">Blog Posts</h1>
+        <a href="{{ url_for('new_post') }}" class="btn btn-lg">New Post</a>
+    </div>
+    
+    {% if posts %}
+        <div class="grid-2">
+            {% for post in posts %}
+                <article class="card margin-bottom-lg">
+                    <div class="card-header">
+                        <h2 class="text-xl font-bold margin-0">{{ post.title }}</h2>
+                    </div>
+                    
+                    <div class="margin-bottom-md">
+                        <span class="text-small text-secondary">
+                            By {{ post.author }} on {{ post.timestamp[:10] }}
+                        </span>
+                    </div>
+                    
+                    <div class="margin-bottom-md">
+                        <p>{{ post.content[:200] }}{% if post.content|length > 200 %}...{% endif %}</p>
+                    </div>
+                    
+                    <div class="flex-between">
+                        <a href="{{ url_for('view_post', post_id=post.id) }}" class="btn">Read Full Post</a>
+                        <span class="text-small text-secondary">
+                            Post #{{ post.id }}
+                        </span>
+                    </div>
+                </article>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="card text-center padding-lg">
+            <h2 class="text-2xl margin-bottom-md">No Posts Yet</h2>
+            <p class="text-secondary margin-bottom-md">
+                Be the first to create a blog post and share your thoughts with the community!
+            </p>
+            <a href="{{ url_for('new_post') }}" class="btn btn-lg">Create First Post</a>
+        </div>
+    {% endif %}
+</section>
+{% endblock %}

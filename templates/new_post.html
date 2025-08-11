@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block title %}New Post - My Flask App{% endblock %}
+
+{% block content %}
+<section class="container padding-lg">
+    <div class="container-sm">
+        <div class="flex-between margin-bottom-lg">
+            <h1 class="text-3xl font-bold">Create New Post</h1>
+            <a href="{{ url_for('blog') }}" class="btn btn-secondary">← Back to Blog</a>
+        </div>
+        
+        <form method="POST" class="card">
+            <div class="margin-bottom-md">
+                <label for="title" class="font-bold margin-bottom-sm display-block">Post Title *</label>
+                <input type="text" id="title" name="title" class="input" 
+                       placeholder="Enter a compelling title for your post" required>
+            </div>
+            
+            <div class="margin-bottom-md">
+                <label for="author" class="font-bold margin-bottom-sm display-block">Author *</label>
+                <input type="text" id="author" name="author" class="input" 
+                       placeholder="Your name" required>
+            </div>
+            
+            <div class="margin-bottom-md">
+                <label for="content" class="font-bold margin-bottom-sm display-block">Content *</label>
+                <textarea id="content" name="content" rows="10" class="input" 
+                          placeholder="Write your blog post content here..." required></textarea>
+            </div>
+            
+            <div class="flex-between">
+                <button type="submit" class="btn btn-lg btn-success">Publish Post</button>
+                <button type="reset" class="btn btn-lg btn-secondary">Clear Form</button>
+            </div>
+        </form>
+        
+        <div class="card margin-top-lg">
+            <h3 class="text-lg font-bold margin-bottom-md">Writing Tips</h3>
+            <ul class="list-none padding-0">
+                <li class="margin-bottom-sm">✍️ Write a clear, descriptive title</li>
+                <li class="margin-bottom-sm">📝 Structure your content with paragraphs</li>
+                <li class="margin-bottom-sm">🎯 Keep your audience in mind</li>
+                <li class="margin-bottom-sm">✨ Proofread before publishing</li>
+            </ul>
+        </div>
+    </div>
+</section>
+{% endblock %}

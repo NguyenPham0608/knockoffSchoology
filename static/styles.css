@@ -362,23 +362,23 @@ body {
 
 /* Borders */
 .border {
-    border: 1px solid #dee2e6;
+    border: 1px solid #ccc;
 }
 
 .border-top {
-    border-top: 1px solid #dee2e6;
+    border-top: 1px solid #ccc;
 }
 
 .border-bottom {
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #ccc;
 }
 
 .border-left {
-    border-left: 1px solid #dee2e6;
+    border-left: 1px solid #ccc;
 }
 
 .border-right {
-    border-right: 1px solid #dee2e6;
+    border-right: 1px solid #ccc;
 }
 
 .border-none {
@@ -387,42 +387,36 @@ body {
 
 /* Border Radius */
 .rounded {
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .rounded-sm {
-    border-radius: 2px;
+    border-radius: 0;
 }
 
 .rounded-lg {
-    border-radius: 8px;
+    border-radius: 0;
 }
 
 .rounded-xl {
-    border-radius: 12px;
+    border-radius: 0;
 }
 
 .rounded-full {
-    border-radius: 50%;
+    border-radius: 0;
 }
 
 /* Shadows */
 .shadow-sm {
-    box-shadow:
-        0 1px 3px rgba(0, 0, 0, 0.12),
-        0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: none;
 }
 
 .shadow-md {
-    box-shadow:
-        0 4px 6px rgba(0, 0, 0, 0.1),
-        0 2px 4px rgba(0, 0, 0, 0.06);
+    box-shadow: none;
 }
 
 .shadow-lg {
-    box-shadow:
-        0 10px 15px rgba(0, 0, 0, 0.1),
-        0 4px 6px rgba(0, 0, 0, 0.05);
+    box-shadow: none;
 }
 
 /* Visibility */
@@ -454,16 +448,15 @@ body {
     background-color: #007bff;
     color: #fff;
     text-decoration: none;
-    border: none;
-    border-radius: 4px;
+    border: 1px solid #007bff;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.2s;
     text-align: center;
 }
 
 .btn:hover {
     background-color: #0056b3;
+    border-color: #0056b3;
 }
 
 .btn-sm {
@@ -478,34 +471,39 @@ body {
 
 .btn-secondary {
     background-color: #6c757d;
+    border-color: #6c757d;
 }
 
 .btn-secondary:hover {
     background-color: #545b62;
+    border-color: #545b62;
 }
 
 .btn-success {
     background-color: #28a745;
+    border-color: #28a745;
 }
 
 .btn-success:hover {
     background-color: #1e7e34;
+    border-color: #1e7e34;
 }
 
 .btn-danger {
     background-color: #dc3545;
+    border-color: #dc3545;
 }
 
 .btn-danger:hover {
     background-color: #c82333;
+    border-color: #c82333;
 }
 
 /* Form Elements */
 .input {
     width: 100%;
     padding: 8px 12px;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
+    border: 1px solid #ccc;
     font-size: 14px;
     font-family: inherit;
 }
@@ -513,7 +511,6 @@ body {
 .input:focus {
     outline: none;
     border-color: #007bff;
-    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
 textarea.input {
@@ -524,18 +521,15 @@ textarea.input {
 /* Cards */
 .card {
     background-color: #fff;
-    border: 1px solid #dee2e6;
-    border-radius: 4px;
+    border: 1px solid #ccc;
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .card-header {
     padding: 10px 20px;
     background-color: #f8f9fa;
-    border-bottom: 1px solid #dee2e6;
+    border-bottom: 1px solid #ccc;
     margin: -20px -20px 20px -20px;
-    border-radius: 4px 4px 0 0;
 }
 
 /* Lists */
@@ -597,11 +591,10 @@ textarea.input {
 /* Navigation Styles */
 nav a {
     text-decoration: none;
-    transition: opacity 0.2s;
 }
 
 nav a:hover {
-    opacity: 0.8;
+    text-decoration: underline;
 }
 
 /* Content Styles */
@@ -611,7 +604,6 @@ nav a:hover {
 
 /* Responsive Design */
 @media (max-width: 768px) {
-
     .grid-2,
     .grid-3,
     .grid-4 {

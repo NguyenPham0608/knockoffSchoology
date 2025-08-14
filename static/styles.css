@@ -5,641 +5,154 @@
 }
 
 body {
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
-        Cantarell, sans-serif;
-    line-height: 1.6;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
     color: #333;
-    background-color: #fff;
 }
 
-/* Layout Classes */
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+header {
+    background: #f4f4f4;
+    padding: 1rem;
+    border-bottom: 1px solid #ddd;
 }
 
-.container-sm {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.flex {
-    display: flex;
-}
-
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
-
-.flex-center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.flex-wrap {
-    flex-wrap: wrap;
-}
-
-.flex-grow {
-    flex-grow: 1;
-}
-
-.grid {
-    display: grid;
-}
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-}
-
-.grid-3 {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-}
-
-.grid-4 {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
-}
-
-/* Display Classes */
-.display-block {
-    display: block;
-}
-
-.display-inline {
-    display: inline;
-}
-
-.display-inline-block {
-    display: inline-block;
-}
-
-/* Typography */
-.text-center {
-    text-align: center;
-}
-
-.text-left {
-    text-align: left;
-}
-
-.text-right {
-    text-align: right;
-}
-
-.text-small {
-    font-size: 0.875rem;
-}
-
-.text-large {
-    font-size: 1.125rem;
-}
-
-.text-xl {
-    font-size: 1.25rem;
-}
-
-.text-2xl {
-    font-size: 1.5rem;
-}
-
-.text-3xl {
-    font-size: 1.875rem;
-}
-
-.text-4xl {
-    font-size: 2.25rem;
-}
-
-.text-5xl {
-    font-size: 3rem;
-}
-
-.text-6xl {
-    font-size: 4rem;
-}
-
-.font-bold {
-    font-weight: bold;
-}
-
-.font-light {
-    font-weight: 300;
-}
-
-/* Margin Classes */
-.margin-0 {
-    margin: 0;
-}
-
-.margin-auto {
-    margin: auto;
-}
-
-.margin-sm {
-    margin: 10px;
-}
-
-.margin-md {
-    margin: 20px;
-}
-
-.margin-lg {
-    margin: 30px;
-}
-
-.margin-x-sm {
-    margin-left: 10px;
-    margin-right: 10px;
-}
-
-.margin-x-md {
-    margin-left: 20px;
-    margin-right: 20px;
-}
-
-.margin-y-sm {
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-
-.margin-y-md {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.margin-top-sm {
-    margin-top: 10px;
-}
-
-.margin-top-md {
-    margin-top: 20px;
-}
-
-.margin-top-lg {
-    margin-top: 30px;
-}
-
-.margin-bottom-sm {
-    margin-bottom: 10px;
-}
-
-.margin-bottom-md {
-    margin-bottom: 20px;
-}
-
-.margin-bottom-lg {
-    margin-bottom: 30px;
-}
-
-.margin-left-sm {
-    margin-left: 10px;
-}
-
-.margin-right-sm {
-    margin-right: 10px;
-}
-
-.margin-right-md {
-    margin-right: 20px;
-}
-
-/* Padding Classes */
-.padding-0 {
-    padding: 0;
-}
-
-.padding-sm {
-    padding: 10px;
-}
-
-.padding-md {
-    padding: 20px;
-}
-
-.padding-lg {
-    padding: 30px;
-}
-
-.padding-x-sm {
-    padding-left: 10px;
-    padding-right: 10px;
-}
-
-.padding-x-md {
-    padding-left: 20px;
-    padding-right: 20px;
-}
-
-.padding-y-sm {
-    padding-top: 10px;
-    padding-bottom: 10px;
-}
-
-.padding-y-md {
-    padding-top: 20px;
-    padding-bottom: 20px;
-}
-
-.padding-bottom-md {
-    padding-bottom: 20px;
-}
-
-/* Width and Height */
-.width-full {
-    width: 100%;
-}
-
-.width-half {
-    width: 50%;
-}
-
-.width-16 {
-    width: 4rem;
-}
-
-.height-full {
-    height: 100%;
-}
-
-.height-screen {
-    height: 100vh;
-}
-
-.height-16 {
-    height: 4rem;
-}
-
-/* Background Colors */
-.bg-primary {
-    background-color: #007bff;
-}
-
-.bg-secondary {
-    background-color: #6c757d;
-}
-
-.bg-success {
-    background-color: #28a745;
-}
-
-.bg-danger {
-    background-color: #dc3545;
-}
-
-.bg-warning {
-    background-color: #ffc107;
-}
-
-.bg-info {
-    background-color: #17a2b8;
-}
-
-.bg-light {
-    background-color: #f8f9fa;
-}
-
-.bg-dark {
-    background-color: #343a40;
-}
-
-.bg-white {
-    background-color: #fff;
-}
-
-/* Text Colors */
-.text-primary {
-    color: #007bff;
-}
-
-.text-secondary {
-    color: #6c757d;
-}
-
-.text-success {
-    color: #28a745;
-}
-
-.text-danger {
-    color: #dc3545;
-}
-
-.text-warning {
-    color: #ffc107;
-}
-
-.text-info {
-    color: #17a2b8;
-}
-
-.text-light {
-    color: #f8f9fa;
-}
-
-.text-dark {
-    color: #343a40;
-}
-
-.text-white {
-    color: #fff;
-}
-
-/* Borders */
-.border {
-    border: 1px solid #ccc;
-}
-
-.border-top {
-    border-top: 1px solid #ccc;
-}
-
-.border-bottom {
-    border-bottom: 1px solid #ccc;
-}
-
-.border-left {
-    border-left: 1px solid #ccc;
-}
-
-.border-right {
-    border-right: 1px solid #ccc;
-}
-
-.border-none {
-    border: none;
-}
-
-/* Border Radius */
-.rounded {
-    border-radius: 0;
-}
-
-.rounded-sm {
-    border-radius: 0;
-}
-
-.rounded-lg {
-    border-radius: 0;
-}
-
-.rounded-xl {
-    border-radius: 0;
-}
-
-.rounded-full {
-    border-radius: 0;
-}
-
-/* Shadows */
-.shadow-sm {
-    box-shadow: none;
-}
-
-.shadow-md {
-    box-shadow: none;
-}
-
-.shadow-lg {
-    box-shadow: none;
-}
-
-/* Visibility */
-.hidden {
-    display: none;
-}
-
-.visible {
-    visibility: visible;
-}
-
-.invisible {
-    visibility: hidden;
-}
-
-/* Text Decoration */
-.text-decoration-none {
-    text-decoration: none;
-}
-
-.text-decoration-underline {
-    text-decoration: underline;
-}
-
-/* Buttons */
-.btn {
-    display: inline-block;
-    padding: 8px 16px;
-    background-color: #007bff;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #007bff;
-    cursor: pointer;
-    font-size: 14px;
-    text-align: center;
-}
-
-.btn:hover {
-    background-color: #0056b3;
-    border-color: #0056b3;
-}
-
-.btn-sm {
-    padding: 4px 8px;
-    font-size: 12px;
-}
-
-.btn-lg {
-    padding: 12px 24px;
-    font-size: 16px;
-}
-
-.btn-secondary {
-    background-color: #6c757d;
-    border-color: #6c757d;
-}
-
-.btn-secondary:hover {
-    background-color: #545b62;
-    border-color: #545b62;
-}
-
-.btn-success {
-    background-color: #28a745;
-    border-color: #28a745;
-}
-
-.btn-success:hover {
-    background-color: #1e7e34;
-    border-color: #1e7e34;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-danger:hover {
-    background-color: #c82333;
-    border-color: #c82333;
-}
-
-/* Form Elements */
-.input {
-    width: 100%;
-    padding: 8px 12px;
-    border: 1px solid #ccc;
-    font-size: 14px;
-    font-family: inherit;
-}
-
-.input:focus {
-    outline: none;
-    border-color: #007bff;
-}
-
-textarea.input {
-    resize: vertical;
-    min-height: 80px;
-}
-
-/* Cards */
-.card {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 20px;
-}
-
-.card-header {
-    padding: 10px 20px;
-    background-color: #f8f9fa;
-    border-bottom: 1px solid #ccc;
-    margin: -20px -20px 20px -20px;
-}
-
-/* Lists */
-.list-none {
+nav ul {
     list-style: none;
+    display: flex;
+    gap: 2rem;
 }
 
-/* Overflow */
-.overflow-hidden {
-    overflow: hidden;
-}
-
-.overflow-auto {
-    overflow: auto;
-}
-
-/* Position */
-.position-relative {
-    position: relative;
-}
-
-.position-absolute {
-    position: absolute;
-}
-
-.position-fixed {
-    position: fixed;
-}
-
-.top-0 {
-    top: 0;
-}
-
-.right-0 {
-    right: 0;
-}
-
-.bottom-0 {
-    bottom: 0;
-}
-
-.left-0 {
-    left: 0;
-}
-
-/* Z-Index */
-.z-10 {
-    z-index: 10;
-}
-
-.z-20 {
-    z-index: 20;
-}
-
-.z-30 {
-    z-index: 30;
-}
-
-/* Navigation Styles */
 nav a {
     text-decoration: none;
+    color: #333;
 }
 
 nav a:hover {
-    text-decoration: underline;
+    color: #007bff;
 }
 
-/* Content Styles */
-.post-content p {
-    line-height: 1.8;
+main {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
 }
 
-/* Responsive Design */
+h1,
+h2 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+.hero {
+    text-align: center;
+    padding: 3rem 0;
+    background: #f9f9f9;
+    margin-bottom: 2rem;
+}
+
+.content-section {
+    margin-bottom: 3rem;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 3rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 3px;
+    margin-top: 1rem;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* New Homepage Layout CSS */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+    display: flex;
+    gap: 2rem;
+}
+
+.blog {
+    flex: 2;
+}
+
+.sidebar {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 5px;
+    height: fit-content;
+}
+
+h3 {
+    margin-bottom: 1rem;
+}
+
+.post {
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.post h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.date {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.widget {
+    margin-bottom: 2rem;
+}
+
+.widget h3 {
+    color: #333;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.widget ul {
+    list-style: none;
+}
+
+.widget li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid #eee;
+}
+
+.widget li:last-child {
+    border-bottom: none;
+}
+
+/* Mobile responsive */
 @media (max-width: 768px) {
-    .grid-2,
-    .grid-3,
-    .grid-4 {
-        grid-template-columns: 1fr;
-    }
-
-    .flex-column-mobile {
+    .main-container {
         flex-direction: column;
     }
 
-    .text-center-mobile {
-        text-align: center;
-    }
-
-    .hidden-mobile {
-        display: none;
-    }
-
-    .container {
-        padding: 0 15px;
-    }
-
-    .container-sm {
-        padding: 0 15px;
-    }
-
-    .flex-between {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .text-3xl {
-        font-size: 1.5rem;
-    }
-
-    .text-2xl {
-        font-size: 1.25rem;
+    nav ul {
+        flex-wrap: wrap;
+        gap: 1rem;
     }
 }
